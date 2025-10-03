@@ -1,0 +1,410 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    padding: 20px;
+}
+
+.container-fluid {
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #2c3e50;
+    color: white;
+    min-height: 100vh;
+}
+
+.sidebar h2 {
+    color: #ecf0f1;
+}
+
+.sidebar a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar a.active,
+.sidebar a.fw-bold {
+    background-color: #34495e;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contenido {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+}
+
+header h1 {
+    margin-top: 0;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+#mensajes:empty {
+    display: none;
+}
+
+.mensaje-oculto {
+    display: none;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.mensaje-exito {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.mensaje-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+form {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #0078d7;
+    outline: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+#errores {
+    margin-bottom: 1em;
+    padding: 10px;
+    border-left: 4px solid #e74c3c;
+    background-color: #fcebea;
+    color: #c0392b;
+    font-size: 14px;
+}
+
+#errores p {
+    margin: 5px 0;
+}
+
+.alert-warning {
+    border-left: 5px solid #ffc107;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.btn-uniforme {
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* ============================================================================
+   ESTILOS CORREGIDOS PARA TABLAS - SOLUCION AL PROBLEMA DE COLUMNA ID
+   ============================================================================ */
+
+/* Configuración CRÍTICA de la tabla */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table-responsive .table {
+    table-layout: fixed !important; /* FUERZA el layout fijo */
+    width: 100% !important;
+    min-width: 1000px; /* Ancho mínimo para evitar compresión excesiva */
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
+/* SOLUCIÓN ESPECÍFICA: Control estricto de anchos de columnas */
+.table colgroup {
+    display: table-column-group;
+}
+
+.table col:nth-child(1) { width: 4% !important; } /* ID - MUY PEQUEÑO */
+.table col:nth-child(2) { width: 18% !important; } /* Nombre PC */
+.table col:nth-child(3) { width: 16% !important; } /* Modelo */
+.table col:nth-child(4) { width: 20% !important; } /* Usuario (Cargo) */
+.table col:nth-child(5) { width: 14% !important; } /* Área Asignada */
+.table col:nth-child(6) { width: 10% !important; } /* Garantía */
+.table col:nth-child(7) { width: 8% !important; } /* Estado */
+.table col:nth-child(8) { width: 10% !important; } /* Acciones */
+
+/* Backup: Control por nth-child con !important */
+.table th:nth-child(1), 
+.table td:nth-child(1) { 
+    width: 4% !important;
+    max-width: 4% !important;
+    min-width: 40px !important;
+    text-align: center !important;
+    padding: 0.5rem 0.2rem !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+.table th:nth-child(2), 
+.table td:nth-child(2) { 
+    width: 18% !important;
+    max-width: 18% !important;
+    min-width: 120px !important;
+}
+
+.table th:nth-child(3), 
+.table td:nth-child(3) { 
+    width: 16% !important;
+    max-width: 16% !important;
+    min-width: 100px !important;
+}
+
+.table th:nth-child(4), 
+.table td:nth-child(4) { 
+    width: 20% !important;
+    max-width: 20% !important;
+    min-width: 140px !important;
+}
+
+.table th:nth-child(5), 
+.table td:nth-child(5) { 
+    width: 14% !important;
+    max-width: 14% !important;
+    min-width: 100px !important;
+}
+
+.table th:nth-child(6), 
+.table td:nth-child(6) { 
+    width: 10% !important;
+    max-width: 10% !important;
+    min-width: 80px !important;
+}
+
+.table th:nth-child(7), 
+.table td:nth-child(7) { 
+    width: 8% !important;
+    max-width: 8% !important;
+    min-width: 70px !important;
+}
+
+.table th:nth-child(8), 
+.table td:nth-child(8) { 
+    width: 10% !important;
+    max-width: 10% !important;
+    min-width: 90px !important;
+    text-align: center !important;
+}
+
+/* Alineación y padding general */
+.table td {
+    vertical-align: middle !important;
+    padding: 0.4rem 0.3rem !important;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.table th {
+    padding: 0.5rem 0.3rem !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ID específico - MÁXIMO CONTROL */
+.table .col-id {
+    width: 4% !important;
+    max-width: 4% !important;
+    min-width: 40px !important;
+    text-align: center !important;
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.1rem !important;
+}
+
+/* Estilos específicos para celdas con contenido multi-línea */
+.table td.nombre-pc {
+    line-height: 1.2;
+}
+
+.table td.modelo {
+    line-height: 1.2;
+}
+
+.table td.nombre-completo,
+.table td.cargo {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* Contenedor específico para usuario (cargo) */
+.usuario-info {
+    line-height: 1.2;
+    width: 100%;
+    overflow: hidden;
+}
+
+.usuario-nombre {
+    font-weight: 600;
+    color: #212529;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    font-size: 0.75rem;
+}
+
+.usuario-cargo {
+    font-size: 0.7rem;
+    color: #6c757d;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Estilos para truncamiento general */
+.text-truncate-table {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 100% !important;
+    display: block !important;
+}
+
+/* Estilos para badges de estado */
+.estado-badge {
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.4rem !important;
+    white-space: nowrap !important;
+}
+
+/* Mejoras para botones de acción */
+.acciones-grupo {
+    white-space: nowrap !important;
+    display: flex !important;
+    gap: 2px !important;
+    justify-content: center !important;
+}
+
+.acciones-grupo .btn {
+    padding: 0.2rem 0.3rem !important;
+    font-size: 0.75rem !important;
+    line-height: 1 !important;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN MEJORADO
+   ============================================================================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .table {
+        font-size: 0.8rem !important;
+        min-width: 900px;
+    }
+    
+    .table td, .table th {
+        padding: 0.3rem 0.2rem !important;
+    }
+    
+    .usuario-nombre, .usuario-cargo {
+        max-width: 120px;
+    }
+    
+    .acciones-grupo .btn {
+        padding: 0.15rem 0.25rem !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    .table {
+        min-width: 700px;
+    }
+    
+    .table th:nth-child(6), .table td:nth-child(6) { /* Garantía */
+        display: none !important;
+    }
+    
+    /* Redistribuir anchos sin la columna Garantía */
+    .table col:nth-child(1) { width: 5% !important; }
+    .table col:nth-child(2) { width: 22% !important; }
+    .table col:nth-child(3) { width: 20% !important; }
+    .table col:nth-child(4) { width: 25% !important; }
+    .table col:nth-child(5) { width: 16% !important; }
+    .table col:nth-child(7) { width: 12% !important; }
+    
+    .usuario-nombre, .usuario-cargo {
+        max-width: 100px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+    .table {
+        min-width: 500px;
+    }
+    
+    .table th:nth-child(3), .table td:nth-child(3) { /* Modelo */
+        display: none !important;
+    }
+    
+    .table th:nth-child(5), .table td:nth-child(5) { /* Área Asignada */
+        display: none !important;
+    }
+    
+    /* Redistribuir para móviles pequeños */
+    .table col:nth-child(1) { width: 8% !important; }
+    .table col:nth-child(2) { width: 35% !important; }
+    .table col:nth-child(4) { width: 35% !important; }
+    .table col:nth-child(7) { width: 22% !important; }
+}
